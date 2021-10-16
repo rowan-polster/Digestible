@@ -3,8 +3,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
     Recipe Modal Example 
   </button>
-  
+   
   <!-- Recipe Modal -->
+<ng-template #mymodal let-modal>
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -18,9 +19,8 @@
          Recipe Example Here!
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+</ng-template>

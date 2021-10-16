@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-modal.component.css']
 })
 export class RecipeModalComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor( ) {
+  }
+
+
 
   ngOnInit(): void {
   }
