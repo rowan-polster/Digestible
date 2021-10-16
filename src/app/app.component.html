@@ -1,22 +1,10 @@
-<div class="app">
-<form-entry-card></form-entry-card>
+<!-- <form-entry-card></form-entry-card>
 <drag-drop-card></drag-drop-card>
 <app-nav-bar></app-nav-bar>
 <app-nav-button></app-nav-button>
 <image-carousel></image-carousel>
 <recipe-image></recipe-image>
 <recipe-modal></recipe-modal>
-<ingredient-tile></ingredient-tile>
-<ul>
-    <li *ngFor="let recipe of recipes">
-        <p>Label : {{ recipe.label }}</p>
-        <p>Image : {{ recipe.image }}</p>
-        <p>Link  : {{ recipe.link }}</p>
-        <ol>
-            <li *ngFor="let ingredient of recipe.ingredients">
-                {{ ingredient }}
-            </li>
-        </ol>
-    </li>
-</ul>
-</div>
+<ingredient-tile [ingredient]="ingredient"></ingredient-tile> -->
+
+<recipe-modal></recipe-modal>
