@@ -1,10 +1,27 @@
-<!-- <form-entry-card></form-entry-card>
 <drag-drop-card></drag-drop-card>
 <app-nav-bar></app-nav-bar>
 <app-nav-button></app-nav-button>
 <image-carousel></image-carousel>
 <recipe-image></recipe-image>
 <recipe-modal></recipe-modal>
-<ingredient-tile [ingredient]="ingredient"></ingredient-tile> -->
+<ingredient-tile [ingredient]="ingredient"></ingredient-tile>
+<div class="columns">
+    <div class="center-block">
+        <form-entry-card [height]="cardHeight" [width]="cardWidth"></form-entry-card>
+        <form-entry-card [height]="cardHeight" [width]="cardWidth"></form-entry-card>
+    </div>
+</div>
 
-<recipe-modal></recipe-modal>
+
+<!-- <ul>
+    <li *ngFor="let recipe of recipes">
+        <p>Label : {{ recipe.label }}</p>
+        <p>Image : {{ recipe.image }}</p>
+        <p>Link  : {{ recipe.link }}</p>
+        <ol>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient }}
+            </li>
+        </ol>
+    </li>
+</ul> -->
