@@ -10,9 +10,6 @@ export class RecipeModalComponent implements OnInit {
 
   constructor( ) {
   }
-
-
-
   ngOnInit(): void {
   }
 
