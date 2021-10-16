@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '../structures/ingredient';
 
 @Component({
   selector: 'ingredient-tile',
