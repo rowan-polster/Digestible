@@ -23,7 +23,7 @@ export class IngredientTileComponent implements OnInit {
     myBackground: object = {
         // "background-image" : `radial-gradient(${this.defaultColor} 0%, ${this.defaultColor} 100%)`
         "background-color" : `${this.defaultColor}`,
-        "box-shadow" : `inset 0 0 25px ${this.alertColor}`
+        "box-shadow" : `inset 0 0 25px ${this.defaultColor}`
     }
   
     constructor() {
@@ -74,7 +74,7 @@ export class IngredientTileComponent implements OnInit {
             Object.assign(this.myBackground, {
                 // "background-image" : `radial-gradient(${this.alertColor} 0%, ${this.defaultColor} 100%)`
                 "background-color" : `${this.defaultColor}`,
-                "box-shadow" : `inset 0 0 25px ${this.alertColor}, inset 0 0 25px ${this.alertColor}`,
+                "box-shadow" : `inset 0 0 25px ${this.alertColor}`,
                 
             });
         }
