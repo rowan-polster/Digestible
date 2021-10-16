@@ -1,4 +1,3 @@
-<form-entry-card></form-entry-card>
 <drag-drop-card></drag-drop-card>
 <app-nav-bar></app-nav-bar>
 <app-nav-button></app-nav-button>
@@ -7,8 +6,10 @@
 <recipe-modal></recipe-modal>
 <ingredient-tile [ingredient]="ingredient"></ingredient-tile>
 <div class="columns">
-  <form-entry-card></form-entry-card>
-  <form-entry-card></form-entry-card>
+    <div class="center-block">
+        <form-entry-card [height]="cardHeight" [width]="cardWidth"></form-entry-card>
+        <form-entry-card [height]="cardHeight" [width]="cardWidth"></form-entry-card>
+    </div>
 </div>
 
 

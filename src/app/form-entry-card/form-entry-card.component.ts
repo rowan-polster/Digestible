@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'form-entry-card',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormEntryCardComponent implements OnInit {
 
-  constructor() { }
+    @Input() width: string;
+    @Input() height: string;
 
-  ngOnInit(): void {
-  }
+    constructor() {
+
+        this.width = '';
+        this.height = '';
+        
+    }
+
+    ngOnInit(): void { }
+
+    ngOnChanges(): void { }
 
 }

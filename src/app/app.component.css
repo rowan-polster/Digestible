@@ -1,11 +1,16 @@
 /* this can be moved to a more appropriate location lol */
 .columns {
     column-count: 2;
-    column-gap: 40px;
+    /* column-gap: 40px; */
     column-rule-style: solid;
     column-rule-width: 1px;
-    column-rule-color: rgb(155, 190, 135) ;
-    column-width: 100px;
-    /* display: flex;
-    flex-direction: column; */
+    /* column-rule-color: rgb(155, 190, 135) ;
+    column-width: 100px; */
+    display: flex;
+    flex-direction: row;
+}
+
+.center-block {
+    display: flex;
+    margin: 0 auto;
 }
