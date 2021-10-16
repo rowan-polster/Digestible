@@ -20,9 +20,9 @@ export class AppComponent {
     constructor() {
         this.recipes = [];
         this.ingredients = [
-            {info: new Ingredient("Milk", "Dairy"), date: new Date("10/11/2021")},
-            {info: new Ingredient("Soda", "Other"), date: new Date()},
-            {info: new Ingredient("Pizza", "Other"), date: new Date("10/05/2021")}
+            {info: new Ingredient("Milk", "Dairy"), date: new Date("10/11/2021")}
+            // {info: new Ingredient("Soda", "Other"), date: new Date()},
+            // {info: new Ingredient("Pizza", "Other"), date: new Date("10/05/2021")}
         ];
         this.cardWidth = "";
         this.cardHeight = "";
@@ -65,7 +65,7 @@ export class AppComponent {
     }
 
     setCardWidth(screenWidth: number = window.innerWidth, maxStrataWidth: number = 2): void {
-        let paddingPercentage = 0.63;
+        let paddingPercentage = 0.55;
         let screenPadding = screenWidth * paddingPercentage;
         let usableArea = screenWidth - screenPadding;
         this.cardWidth = `${this.round(usableArea / maxStrataWidth)}px`
@@ -75,7 +75,7 @@ export class AppComponent {
     }
 
     setCardHeight(): void {
-        this.cardHeight = this.cardWidth;
+        this.cardHeight = `${parseInt(this.cardWidth) * 1}px`
     }
 
     setDivWidth(): void {
