@@ -1,1 +1,16 @@
-<p>manual-form works!</p>
+<div class="form-container" [style.width]="width" [style.height]="height">
+  <div>
+    <form action="/action_page.php">
+      <label for="iName">Ingredient name:</label><br>
+      <input type="text" id="iName" name="iName" value="John"><br><br>
+  
+      <label for="category">Category:</label><br>
+      <input type="text" id="category" name="category" value=""><br><br>
+  
+      <label for="purchased">Date purchased:</label><br>
+      <input type="date" id="purchased" name="purchased" value=""><br><br>
+  
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
