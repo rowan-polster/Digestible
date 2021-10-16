@@ -1,15 +1,14 @@
-.ingredient-tile {
+/* .ingredient-tile {
     border-radius: 0px;
     padding: 20px;
     width: 500px;
     height: 1px;
     display: flex;
     justify-content: center;
-}
+} */
 
-.test {
+.ingredient-tile {
     border-radius: 10px;
-    width: 500px;
     padding: 1px;
     height: -20px;
     margin: 20px;
