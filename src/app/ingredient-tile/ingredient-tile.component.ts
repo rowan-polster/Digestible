@@ -7,10 +7,7 @@ import { Ingredient } from '../structures/ingredient';
   styleUrls: ['./ingredient-tile.component.css']
 })
 export class IngredientTileComponent implements OnInit {
-
-  ingredients: Ingredient[] = [];
   
-
   constructor() { }
 
   ngOnInit(): void {
