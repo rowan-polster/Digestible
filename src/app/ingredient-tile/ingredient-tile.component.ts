@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngredientTileComponent implements OnInit {
 
+  ingredients: Ingredient[] = [];
+  
+
   constructor() { }
 
   ngOnInit(): void {
