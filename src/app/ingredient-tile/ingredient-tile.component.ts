@@ -35,6 +35,7 @@ export class IngredientTileComponent implements OnInit {
     ngOnInit(): void {
 
         this.checkExpiration();   
+        this.updateColor();
 
     }
 
@@ -44,6 +45,7 @@ export class IngredientTileComponent implements OnInit {
         this.category = this.ingredient.category;
         this.originalShelfLife = this.ingredient.originalShelfLife;
         this.checkExpiration();
+        this.updateColor();
 
     }
 
@@ -52,6 +54,7 @@ export class IngredientTileComponent implements OnInit {
         const dateCompare: number = new Date().getTime() - this.datePurchased.getTime();
         const daysElapsed: number = dateCompare / (1000 * 3600 * 24);
         this.daysToExpiration = this.originalShelfLife - daysElapsed;
+        this.updateColor();
 
         if (this.daysToExpiration <= 0) {
             this.isExpired = true;

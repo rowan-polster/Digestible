@@ -1,0 +1,9 @@
+.ingredient-tile {
+    border-radius: 0px;
+    background: #73AD21;
+    padding: 20px;
+    width: 500px;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+  }
