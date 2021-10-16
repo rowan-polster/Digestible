@@ -20,11 +20,11 @@ export class IngredientTileComponent implements OnInit {
     
     daysToExpiration: number;
     isExpired: boolean;
-    myColor: object = {"color" : this.defaultColor};
+    myColor: object = {"background-color" : this.defaultColor};
   
     constructor() {
         this.ingredient = new Ingredient("MISSING", "MISSING");
-        this.datePurchased = new Date("10/1/2021");
+        this.datePurchased = new Date("10/17/2021");
         this.name = this.ingredient.name;
         this.category = this.ingredient.category;
         this.originalShelfLife = this.ingredient.originalShelfLife;
@@ -67,7 +67,7 @@ export class IngredientTileComponent implements OnInit {
     private updateColor(): void {
 
         if (this.daysToExpiration <= 2) {
-            Object.assign(this.myColor, {"color" : this.alertColor});
+            Object.assign(this.myColor, {"background-color" : this.alertColor});
         }
 
     }
