@@ -45,6 +45,7 @@ export class IngredientTileComponent implements OnInit {
         this.category = this.ingredient.category;
         this.originalShelfLife = this.ingredient.originalShelfLife;
         this.checkExpiration();
+        this.updateColor();
 
     }
 
