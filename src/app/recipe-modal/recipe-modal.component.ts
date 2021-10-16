@@ -7,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeModalComponent implements OnInit {
   
+  show = true;
 
   constructor( ) {
   }
   ngOnInit(): void {
+  }
+
+  openModal() {
+    
+  }
+
+  closeModal() {
+
   }
 
 }
