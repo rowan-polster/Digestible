@@ -1,16 +1,26 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Didact+Gothic&display=swap');
+    </style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+    </style>
+
+
 <div class="form-container" [style.width]="width" [style.height]="height">
   <div>
+    <h2>Add an ingredient to your pantry</h2>
     <form action="/action_page.php">
-      <label for="iName">Ingredient name:</label><br>
-      <input type="text" id="iName" name="iName" value="John"><br><br>
+      <label for="iName" class="form-font">Ingredient  </label>
+      <input type="text" id="iName" name="iName" placeholder="Tomatoes"><br><br>
   
-      <label for="category">Category:</label><br>
-      <input type="text" id="category" name="category" value=""><br><br>
+      <label for="category" class="form-font">Category  </label>
+      <input type="text" id="category" name="category" placeholder="i.e Produce, Dairy, etc"><br><br>
   
-      <label for="purchased">Date purchased:</label><br>
+      <label for="purchased" class="form-font">Date purchased  </label>
       <input type="date" id="purchased" name="purchased" value=""><br><br>
   
-      <input type="submit" value="Submit">
+      <input class="submitButton" type="submit" value="Add to Pantry">
     </form>
   </div>
 </div>
