@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-manual-form',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManualFormComponent implements OnInit {
 
-  constructor() { }
+  @Input() width: string;
+  @Input() height: string;
+
+  constructor() { 
+    this.width = '';
+    this.height = '';
+  }
 
   ngOnInit(): void {
   }
