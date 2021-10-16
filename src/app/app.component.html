@@ -1,4 +1,4 @@
-<ingredient-tile [ingredient]="ingredient"></ingredient-tile>
+<ingredient-tile *ngFor="let ingredient of ingredients" [ingredient]="ingredient.info"></ingredient-tile>
 <div class="columns" style="columns: 1">
     <div class="center-block">
         <form-entry-card [height]="cardHeight" [width]="divWidth"></form-entry-card>

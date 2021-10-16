@@ -10,7 +10,8 @@ import { Recipe } from './structures/Recipe';
 export class AppComponent {
 
     recipes : Recipe[];
-    ingredient: Ingredient;
+    ingredients: DatedIngredient[];
+    
 
     cardWidth: string;
     cardHeight: string;
@@ -18,7 +19,10 @@ export class AppComponent {
 
     constructor() {
         this.recipes = [];
-        this.ingredient = new Ingredient('Milk', 'Dairy');
+        this.ingredients = [
+            {info: new Ingredient("Milk", "Dairy"), date: new Date()},
+            {info: new Ingredient("Soda", "Other"), date: new Date()}
+        ];
         this.cardWidth = "";
         this.cardHeight = "";
         this.divWidth = "";
@@ -90,4 +94,9 @@ export class AppComponent {
         return Math.round(calculation * factor) / factor;
     }
     
+}
+
+interface DatedIngredient {
+    info: Ingredient,
+    date: Date
 }
