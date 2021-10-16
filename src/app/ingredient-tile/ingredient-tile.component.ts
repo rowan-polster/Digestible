@@ -20,7 +20,7 @@ export class IngredientTileComponent implements OnInit {
     
     daysToExpiration: number;
     isExpired: boolean;
-    myColor: object = {"background-color" : this.defaultColor};
+    myBackground: object = {"background-image" : `radial-gradient(${this.defaultColor} 0%, ${this.defaultColor} 100%)`}
   
     constructor() {
         this.ingredient = new Ingredient("MISSING", "MISSING");
@@ -67,7 +67,7 @@ export class IngredientTileComponent implements OnInit {
     private updateColor(): void {
 
         if (this.daysToExpiration <= 2) {
-            Object.assign(this.myColor, {"background-color" : this.alertColor});
+            Object.assign(this.myBackground, {"background-image" : `radial-gradient(${this.alertColor} 0%, ${this.defaultColor} 100%)`});
         }
 
     }

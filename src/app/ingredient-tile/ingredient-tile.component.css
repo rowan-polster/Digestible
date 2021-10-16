@@ -14,3 +14,8 @@
     height: -20px;
     margin: 20px;
   }
+
+  .center-text {
+      display: flex;
+      justify-content: center;
+  }
