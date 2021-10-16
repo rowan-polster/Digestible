@@ -17,4 +17,10 @@
   .form-font {
     font-family: 'Comfortaa', cursive;
     font-family: 'Didact Gothic', sans-serif;
+    color: rgb(34, 39, 28)
+  }
+
+  h2 {
+    font-family: 'Comfortaa', cursive;
+    color: whitesmoke;
   }
