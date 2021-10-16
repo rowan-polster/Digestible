@@ -20,7 +20,7 @@ export class IngredientTileComponent implements OnInit {
     
     daysToExpiration: number;
     isExpired: boolean;
-    color: string;
+    myColor: object = {"color" : this.defaultColor};
   
     constructor() {
         this.ingredient = new Ingredient("MISSING", "MISSING");
@@ -30,7 +30,6 @@ export class IngredientTileComponent implements OnInit {
         this.originalShelfLife = this.ingredient.originalShelfLife;
         this.daysToExpiration = this.ingredient.originalShelfLife;
         this.isExpired = false;
-        this.color = this.defaultColor;
     }
 
     ngOnInit(): void {
@@ -65,7 +64,7 @@ export class IngredientTileComponent implements OnInit {
     private updateColor(): void {
 
         if (this.daysToExpiration <= 2) {
-            this.color = this.alertColor;
+            Object.assign(this.myColor, {"color" : this.alertColor});
         }
 
     }
