@@ -1,4 +1,4 @@
-class Ingredient {
+export class Ingredient {
     category: string;
     name: string;
     isExpiringSoon: boolean;
