@@ -80,7 +80,7 @@ export class AppComponent {
 
     setDivWidth(): void {
         let regexAllNumbers = /[0-9]/g;
-        this.divWidth = `${parseInt(this.cardWidth) * 2.45}${this.cardWidth.replace(regexAllNumbers, '')}`;        
+        this.divWidth = `${parseInt(this.cardWidth) * 2.4}${this.cardWidth.replace(regexAllNumbers, '')}`;        
     }
     
     @HostListener('window:resize')

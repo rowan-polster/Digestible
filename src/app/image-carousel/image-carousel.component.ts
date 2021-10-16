@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { RecipeModalComponent } from '../recipe-modal/recipe-modal.component';
 
 
@@ -19,4 +19,13 @@ export class NgbdCarouselBasic {
   // }
 
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+  @Input() width;
+  @Input() height;
+
+  constructor() {
+    this.width = '';
+    this.height = '';
+  }
+  
 }

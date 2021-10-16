@@ -15,6 +15,7 @@ import { RecipeModalComponent } from './recipe-modal/recipe-modal.component';
 import { IngredientTileComponent } from './ingredient-tile/ingredient-tile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ManualFormComponent } from './manual-form/manual-form.component';
 
 @NgModule({
   declarations: [
