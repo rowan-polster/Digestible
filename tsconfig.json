@@ -21,7 +21,7 @@
       "dom"
     ],
     "paths": {
-      "@stuctures/": ["src/app/structures/"]
+      "@structures/": ["src/app/structures/"]
     }
   },
   "angularCompilerOptions": {
