@@ -1,0 +1,25 @@
+.box-tasvir {
+    overflow: hidden;
+    height: 320px;
+    /* width: 320px; */
+    position: relative;
+    margin: 0 auto;
+}
+@keyframes masihscroll {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(-50%);}
+    100% {transform: translateY(-0%);}
+}
+.box-tasvir img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transition: all 8s;
+    animation-duration: 60s;
+    animation-name: masihscroll;
+    animation-iteration-count: 1000;    
+}
+
+div {
+    border-radius: 50px;
+}

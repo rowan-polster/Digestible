@@ -65,7 +65,7 @@ export class AppComponent {
     }
 
     setCardWidth(screenWidth: number = window.innerWidth, maxStrataWidth: number = 2): void {
-        let paddingPercentage = 0.60;
+        let paddingPercentage = 0.63;
         let screenPadding = screenWidth * paddingPercentage;
         let usableArea = screenWidth - screenPadding;
         this.cardWidth = `${this.round(usableArea / maxStrataWidth)}px`

@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { RecipeModalComponent } from '../recipe-modal/recipe-modal.component';
+import { Recipe } from '../structures/Recipe';
 
 
 @Component({
@@ -18,14 +19,26 @@ export class NgbdCarouselBasic {
     // this.modalElement.openModal();
   // }
 
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images: string[] = [];
 
-  @Input() width;
-  @Input() height;
+  @Input() width: string;
+  @Input() height: string;
+  @Input() recipes?: Recipe[];
 
   constructor() {
     this.width = '';
     this.height = '';
+  }
+
+  ngOnChanges() {
+
+    if (this.recipes) {
+      this.images = [];
+      this.recipes.forEach(recipe => {
+        this.images.push(recipe.image)
+      })
+    }
+
   }
   
 }
