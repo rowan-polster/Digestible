@@ -27,8 +27,4 @@ export class RecipeModalComponent implements OnInit {
     })
   }
 
-  closeModal() {
-
-  }
-
 }
