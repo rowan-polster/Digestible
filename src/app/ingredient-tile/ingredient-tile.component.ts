@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredient-tile.component.css']
 })
 export class IngredientTileComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
