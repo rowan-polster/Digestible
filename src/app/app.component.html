@@ -5,7 +5,7 @@
 <image-carousel></image-carousel>
 <recipe-image></recipe-image>
 <recipe-modal></recipe-modal>
-<ingredient-tile></ingredient-tile>
+<ingredient-tile [ingredient]="ingredient"></ingredient-tile>
 <ul>
     <li *ngFor="let recipe of recipes">
         <p>Label : {{ recipe.label }}</p>

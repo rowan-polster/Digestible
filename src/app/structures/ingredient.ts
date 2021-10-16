@@ -1,9 +1,13 @@
 export class Ingredient {
 
-    test: string
+    name: string;
+    category: string;
+    originalShelfLife: number;
 
-    constructor(test: string) {
-        this.test = test;
+    constructor(name: string, category: string) {
+        this.name = name;
+        this.category = category;
+        this.originalShelfLife = 5;
     }
     
 }

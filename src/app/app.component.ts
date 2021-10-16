@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
-import { Recipe } from '@structures/Recipe';
+import { Ingredient } from './structures/ingredient';
+import { Recipe } from './structures/Recipe';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
     recipes : Recipe[];
+    ingredient: Ingredient;
 
     constructor() {
         this.recipes = [];
+        this.ingredient = new Ingredient('Milk', 'Dairy');
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
 
         const apiUrl = "https://digestible-test-server.herokuapp.com/5";
         const fetchConfig: object = {
