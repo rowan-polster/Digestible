@@ -10,6 +10,7 @@ import { ImageCarouselComponent } from './image-carousel/image-carousel.componen
 import { RecipeImageComponent } from './image-carousel/recipe-image/recipe-image.component';
 import { RecipeModalComponent } from './recipe-modal/recipe-modal.component';
 import { IngredientTileComponent } from './ingredient-tile/ingredient-tile.component';
+import { ManualFormComponent } from './manual-form/manual-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { IngredientTileComponent } from './ingredient-tile/ingredient-tile.compo
     ImageCarouselComponent,
     RecipeImageComponent,
     RecipeModalComponent,
-    IngredientTileComponent
+    IngredientTileComponent,
+    ManualFormComponent
   ],
   imports: [
     BrowserModule
