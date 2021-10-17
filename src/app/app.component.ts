@@ -11,6 +11,7 @@ export class AppComponent {
 
     recipes : Recipe[];
     ingredients: DatedIngredient[];
+    alertIngredients: Ingredient[];
     
 
     cardWidth: string;
@@ -24,6 +25,7 @@ export class AppComponent {
             {info: new Ingredient("Soda", "Other"), date: new Date()},
             {info: new Ingredient("Pizza", "Other"), date: new Date("10/05/2021")}
         ];
+        this.alertIngredients = [];
         this.cardWidth = "";
         this.cardHeight = "";
         this.divWidth = "";
@@ -59,9 +61,14 @@ export class AppComponent {
             this.setCardWidth();
             this.setCardHeight();
             this.setDivWidth();
+            this.sortIngredients();
 
         }))
 
+    }
+
+    ngOnChanges() {
+        this.sortIngredients();
     }
 
     setCardWidth(screenWidth: number = window.innerWidth, maxStrataWidth: number = 2): void {
@@ -94,7 +101,71 @@ export class AppComponent {
         let factor = Number(`1${'0'.repeat(numberOfDecimals)}`);
         return Math.round(calculation * factor) / factor;
     }
-    
+
+    private sortIngredients(): void {
+
+        this.ingredients.sort((a: DatedIngredient, b: DatedIngredient) => {
+
+
+            let a_ramainingLife: number = (new Date().getTime() - a.date.getTime()) / (1000 * 3600 * 24);
+            let b_ramainingLife: number = (new Date().getTime() - b.date.getTime()) / (1000 * 3600 * 24);
+
+            if (a_ramainingLife < b_ramainingLife) {
+                return 1;
+            } else if (a_ramainingLife > b_ramainingLife) {
+                return -1;
+            }
+            return 0;            
+
+        });
+
+        this.alertIngredients = [];
+        for (const ingredient of this.ingredients) {
+            let remainingLife: number = (new Date().getTime() - ingredient.date.getTime()) / (1000 * 3600 * 24);
+            if (remainingLife >= 3) {
+                this.alertIngredients.push(ingredient.info);
+            }
+        }
+        
+    }
+
+    isExpiringSoon(ingredient: DatedIngredient) : boolean {
+        let remainingLife: number = (new Date().getTime() - ingredient.date.getTime()) / (1000 * 3600 * 24);
+        if (remainingLife >= 3) {
+            return true
+        }
+        return false;
+    }
+
+    private recommendRecipes(): void {
+        const apiUrl = "https://digestible-test-server.herokuapp.com/5";
+        const fetchConfig: object = {
+            method: 'GET',
+            mode: 'cors'
+        };
+        fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
+
+            for (const recipePayload of json.hits) {
+
+                const ingredients = [];
+                for (const ingredient of recipePayload.recipe.ingredients) {
+                    ingredients.push(ingredient.food);
+                }
+
+                this.recipes.push(
+                    new Recipe({
+                        label: recipePayload.recipe.label,
+                        image : recipePayload.recipe.image,
+                        link : recipePayload.recipe.url,
+                        ingredients: ingredients
+                    })
+                );
+                
+            }
+
+        }))
+    }
+
 }
 
 interface DatedIngredient {
