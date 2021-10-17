@@ -53,4 +53,18 @@
     align-items: flex-end;
     font-family: 'Comfortaa', cursive;
     font-weight: 200;
+    overflow-y: scroll
   }
+
+  .form-container {
+    border-radius: 25px;
+    background: #b5cf91;
+    padding: 50px;
+    margin: 50px;
+    overflow-y: scroll
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
