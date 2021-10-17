@@ -60,3 +60,12 @@ ul {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+  li label {
+    display: inline-block;
+    color: #809466;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
