@@ -9,18 +9,25 @@
 
 <div [style.width]="width" [style.height]="height">
   <div>
-    <p>Add Item to Pantry</p>
-    <form action="/action_page.php">
-      <label for="iName" class="form-font">Ingredient </label>
-      <input type="text" id="iName" name="iName" placeholder="Tomatoes"><br>
+    <h2>add an ingredient to your pantry</h2><br><br>
+    <form>
+
+      <div class="right-div">
+        Ingredient
+        <input type="text" id="iName" name="iName" placeholder="e.g. Tomatoes">
+      </div><br>
   
-      <label for="category" class="form-font">Category </label>
-      <input type="text" id="category" name="category" placeholder="i.e Produce, Dairy, etc"><br>
+      <div>
+        Category
+        <input type="text" id="category" name="category" placeholder="e.g. Produce, Dairy, etc">
+      </div><br>
+
+      <div>
+        Date Purchased
+        <input type="date" id="purchased" name="purchased" value=""><br><br><br>
+      </div>
   
-      <label for="purchased" class="form-font">Date purchased </label>
-      <input type="date" id="purchased" name="purchased" value=""><br><br>
-  
-      <input class="submitButton" type="submit" value="Add to Pantry">
+      <input class="submitButton" type="submit" value="      Add Food      " style="margin: 0 auto; display: flex;">
     </form>
   </div>
 </div>
