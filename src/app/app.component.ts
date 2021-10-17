@@ -26,9 +26,9 @@ export class AppComponent {
     constructor() {
         this.recipes = [];
         this.ingredients = [
-            {info: new Ingredient("Milk", "Dairy"), date: new Date("10/11/2021")},
+            {info: new Ingredient("Milk", "Dairy"), date: new Date("10/12/2021")},
             {info: new Ingredient("Soda", "Other"), date: new Date()},
-            {info: new Ingredient("Eggs", "Other"), date: new Date("10/05/2021")},
+            {info: new Ingredient("Eggs", "Dairy"), date: new Date("10/12/2021")},
             // {info: new Ingredient("Cheese", "Other"), date: new Date("10/01/2021")}
         ];
         this.alertIngredients = [];
