@@ -1,6 +1,6 @@
 <!-- <p>image-carousel works!</p> -->
 
-<ngb-carousel *ngIf="images" [style.width]="width" [style.height]="height" style="border-radius: 55px 55px 55px 55px;" [interval]="7500">
+<ngb-carousel *ngIf="recipes" [style.width]="width" [style.height]="height" style="border-radius: 55px 55px 55px 55px;">
 
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
@@ -10,7 +10,7 @@
     </div>
     <div class="carousel-caption">
       <h3>{{ recipes[0].triggerIngredients[0] }}</h3>
-      <p>Use your {{ recipes[0].triggerIngredients[0] }} to make {{ recipes[0].label }}!</p>
+      <p>Use this ingredient to make {{ recipes[0].label }}!</p>
     </div>
   </ng-template>
 
@@ -22,7 +22,7 @@
     </div>
     <div class="carousel-caption">
       <h3>{{ recipes[1].triggerIngredients[0] }}</h3>
-      <p>Use your {{ recipes[1].triggerIngredients[0] }} to make {{ recipes[1].label }}!</p>
+      <p>Use this ingredient to make {{ recipes[1].label }}!</p>
     </div>
   </ng-template>
 
@@ -34,7 +34,7 @@
     </div>
     <div class="carousel-caption">
       <h3>{{ recipes[2].triggerIngredients[0] }}</h3>
-      <p>Use your {{ recipes[2].triggerIngredients[0] }} to make {{ recipes[2].label }}!</p>
+      <p>Use this ingredient to make {{ recipes[2].label }}!</p>
     </div>
   </ng-template>
 
