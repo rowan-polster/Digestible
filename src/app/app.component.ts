@@ -257,11 +257,17 @@ export class AppComponent {
 
         if (name !== "" && category !== "" && date !== "") {            
             
-            let food: Ingredient = new Ingredient(name, category);
-            this.ingredients.push({
-                info: food,
-                date: new Date(date)
-            });
+            let sameIndex = this.ingredients.map(item => item.info.name.toLowerCase()).indexOf(name.toLowerCase());
+            if (sameIndex < 0) {
+                let food: Ingredient = new Ingredient(name, category);
+                this.ingredients.push({
+                    info: food,
+                    date: new Date(date)
+                });
+            } else {
+                this.ingredients[sameIndex].date = new Date(date);
+            }
+            
 
         }
 
