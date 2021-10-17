@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { bindCallback } from 'rxjs';
 import Swal from 'sweetalert2'
+import { Recipe } from '../structures/Recipe';
 
 @Component({
   selector: 'recipe-modal',
@@ -15,14 +16,14 @@ export class RecipeModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModal() {
+  openModal(recipe: Recipe) {
     Swal.fire({
-      title: 'This is a Recipe Title',
-      text: 'List of Ingredients',
-      imageUrl: 'https://unsplash.it/400/200',
-      imageWidth: 400,
-      imageHeight: 200,
-      imageAlt: 'Custom image',
+      title: recipe.label,
+      // text: 'List of Ingredients',
+      imageUrl: recipe.image,
+      // imageWidth: 400,
+      // imageHeight: 200,
+      // imageAlt: 'Custom image',
       confirmButtonColor: '#000000'
     })
   }

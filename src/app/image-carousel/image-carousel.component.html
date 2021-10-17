@@ -5,7 +5,7 @@
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[0]" alt="Random first slide" (click)="rm.openModal()">
+        <img [src]="images[0]" alt="Random first slide" (click)="rm.openModal(recipes[0])">
       </div>        
     </div>
     <div class="carousel-caption">
@@ -17,7 +17,7 @@
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[1]" alt="Random first slide" (click)="rm.openModal()">
+        <img [src]="images[1]" alt="Random first slide" (click)="rm.openModal(recipes[1])">
       </div>        
     </div>
     <div class="carousel-caption">
@@ -29,7 +29,7 @@
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[2]" alt="Random first slide" (click)="rm.openModal()">
+        <img [src]="images[2]" alt="Random first slide" (click)="rm.openModal(recipes[2])">
       </div>        
     </div>
     <div class="carousel-caption">
