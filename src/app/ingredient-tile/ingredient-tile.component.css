@@ -18,6 +18,10 @@
         font-family: 'Comfortaa', cursive;
   }
 
+  .deleteButton {
+      float: left;
+  }
+
   /* .center-text {
       display: flex;
       justify-content: center;
