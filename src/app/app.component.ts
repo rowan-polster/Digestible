@@ -52,7 +52,8 @@ export class AppComponent {
                         label: recipePayload.recipe.label,
                         image : recipePayload.recipe.image,
                         link : recipePayload.recipe.url,
-                        ingredients: ingredients
+                        ingredients: ingredients,
+                        triggerIngredients: ["Test Payload One", "Test Payload Two", "Test Payload Three", "Test Payload Four"]
                     })
                 );
                 
@@ -157,7 +158,8 @@ export class AppComponent {
                         label: recipePayload.recipe.label,
                         image : recipePayload.recipe.image,
                         link : recipePayload.recipe.url,
-                        ingredients: ingredients
+                        ingredients: ingredients,
+                        triggerIngredients: ["Test Payload"]
                     })
                 );
                 
