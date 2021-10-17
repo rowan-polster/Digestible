@@ -54,3 +54,7 @@
     font-family: 'Comfortaa', cursive;
     font-weight: 200;
   }
+
+  html { 
+    background-color: rgb(69, 71, 67); 
+  } 
