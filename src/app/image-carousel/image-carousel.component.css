@@ -28,6 +28,12 @@
     display: none;
  }
 
+ ::ng-deep .carousel-inner >.item {
+    -webkit-transition: -webkit-transform 1.5s ease-in-out !important;
+    -o-transition: -o-transform 1.5s ease-in-out !important;
+    transition: transform 1.5s ease-in-out !important;
+}
+
 div {
     border-radius: 50px;
 }
