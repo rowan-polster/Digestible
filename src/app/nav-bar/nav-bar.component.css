@@ -16,7 +16,7 @@ ul {
     padding: 0;
     overflow: hidden;
     border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    background-color: #dcf1bf;
     width: 100%;
   }
   
@@ -26,7 +26,7 @@ ul {
   
   li a {
     display: block;
-    color: rgb(112, 112, 112);
+    color: #809466;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -34,7 +34,7 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: rgb(218, 218, 218);
+    background-color: #cfe6b0;
   }
 
   li:last-child {
