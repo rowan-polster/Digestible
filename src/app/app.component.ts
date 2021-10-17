@@ -168,6 +168,20 @@ export class AppComponent {
         }))
     }
 
+    addIngredient(name: string, category: string, date: string) : void {
+
+        if (name !== "" && category !== "" && date !== "") {            
+            
+            let food: Ingredient = new Ingredient(name, category);
+            this.ingredients.push({
+                info: food,
+                date: new Date(date)
+            });
+
+        }
+        
+    }
+
 }
 
 export interface DatedIngredient {

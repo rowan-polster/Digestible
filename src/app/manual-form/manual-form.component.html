@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Didact+Gothic&display=swap');
     </style>
 
@@ -14,20 +14,20 @@
 
       <div class="right-div">
         Ingredient
-        <input type="text" id="iName" name="iName" placeholder="e.g. Tomatoes">
+        <input #name type="text" id="iName" name="iName" placeholder="e.g. Tomatoes" required>
       </div><br>
   
       <div>
         Category
-        <input type="text" id="category" name="category" placeholder="e.g. Produce, Dairy, etc">
+        <input #category type="text" id="category" name="category" placeholder="e.g. Produce, Dairy, etc" required>
       </div><br>
 
       <div>
         Date Purchased
-        <input type="date" id="purchased" name="purchased" value=""><br><br><br>
+        <input #date type="date" id="purchased" name="purchased" value="2021-10-16"><br><br><br>
       </div>
   
-      <input class="submitButton" type="submit" value="      Add Food      " style="margin: 0 auto; display: flex;">
+      <input (click)="addIngredient('test', 'test', '2018, 10, 10')" class="submitButton" type="submit" value="      Add Food      " style="margin: 0 auto; display: flex;">
     </form>
   </div>
-</div>
+</div> -->
