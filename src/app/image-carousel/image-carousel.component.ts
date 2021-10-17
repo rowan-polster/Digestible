@@ -23,11 +23,12 @@ export class NgbdCarouselBasic {
 
   @Input() width: string;
   @Input() height: string;
-  @Input() recipes?: Recipe[];
+  @Input() recipes: Recipe[];
 
   constructor() {
     this.width = '';
     this.height = '';
+    this.recipes = [];
   }
 
   ngOnChanges() {
