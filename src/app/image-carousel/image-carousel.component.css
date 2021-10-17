@@ -15,10 +15,14 @@
     height: auto;
     max-width: 100%;
     transition: all 8s;
-    animation-duration: 60s;
+    animation-duration: 30s;
     animation-name: masihscroll;
     animation-iteration-count: 1000;
 }
+
+::ng-deep .carousel-item {
+    transition-duration: 2000ms;
+  }
 
 div {
     border-radius: 50px;

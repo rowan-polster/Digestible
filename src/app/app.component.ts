@@ -33,38 +33,40 @@ export class AppComponent {
 
     ngOnInit(): void {
 
-        const apiUrl = "https://digestible-test-server.herokuapp.com/5";
-        const fetchConfig: object = {
-            method: 'GET',
-            mode: 'cors'
-        };
-        fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
+        // const apiUrl = "https://digestible-test-server.herokuapp.com/5";
+        // const fetchConfig: object = {
+        //     method: 'GET',
+        //     mode: 'cors'
+        // };
+        // fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
 
-            for (const recipePayload of json.hits) {
+        //     for (const recipePayload of json.hits) {
 
-                const ingredients = [];
-                for (const ingredient of recipePayload.recipe.ingredients) {
-                    ingredients.push(ingredient.food);
-                }
+        //         const ingredients = [];
+        //         for (const ingredient of recipePayload.recipe.ingredients) {
+        //             ingredients.push(ingredient.food);
+        //         }
 
-                this.recipes.push(
-                    new Recipe({
-                        label: recipePayload.recipe.label,
-                        image : recipePayload.recipe.image,
-                        link : recipePayload.recipe.url,
-                        ingredients: ingredients,
-                        triggerIngredients: ["Test Payload One", "Test Payload Two", "Test Payload Three", "Test Payload Four"]
-                    })
-                );
+        //         this.recipes.push(
+        //             new Recipe({
+        //                 label: recipePayload.recipe.label,
+        //                 image : recipePayload.recipe.image,
+        //                 link : recipePayload.recipe.url,
+        //                 ingredients: ingredients,
+        //                 triggerIngredients: ["Test Payload One", "Test Payload Two", "Test Payload Three", "Test Payload Four"]
+        //             })
+        //         );
                 
-            }
+        //     }            
 
-            this.setCardWidth();
-            this.setCardHeight();
-            this.setDivWidth();
-            this.sortIngredients();
+        // })).then(() => {
+        //     this.setCardWidth();
+        //     this.setCardHeight();
+        //     this.setDivWidth();
+        //     this.sortIngredients();
+        // });
 
-        }))
+        this.recommendRecipes();
 
     }
 
@@ -139,7 +141,13 @@ export class AppComponent {
     }
 
     private recommendRecipes(): void {
-        const apiUrl = "https://digestible-test-server.herokuapp.com/5";
+        
+        const numOfResults : number = 4;
+        const from : number = Math.round(Math.random() * 10);
+        const to : number = from + numOfResults;
+        const appId : string = "c8728e98";
+        const appKey : string = "5c86e9ec900ac93823bc0a8c336fe773"
+        const apiUrl : string = `https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}&from=${from}&to=${to}`;
         const fetchConfig: object = {
             method: 'GET',
             mode: 'cors'
@@ -165,7 +173,13 @@ export class AppComponent {
                 
             }
 
-        }))
+        })).then(() => {
+            this.setCardWidth();
+            this.setCardHeight();
+            this.setDivWidth();
+            this.sortIngredients();
+        });
+
     }
 
     addIngredient(name: string, category: string, date: string) : void {
@@ -179,6 +193,8 @@ export class AppComponent {
             });
 
         }
+
+        this.sortIngredients();
         
     }
 
