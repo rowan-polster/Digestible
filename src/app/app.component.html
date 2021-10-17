@@ -1,29 +1,37 @@
 <!-- <app-nav-bar></app-nav-bar> -->
-<nav>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+    </style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Didact+Gothic&display=swap');
+    </style>
+  
+  <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#inventory">Inventory</a></li>
+      <li><a class="title" label="#home">Digestible</a></li>
+      <li><a class="subtitle" label="#inventory">reduce your waste, not your taste</a></li>
 
       <li style="float:right">
-      <label class="container">Kosher
-        <input type="checkbox" [checked]="kosherAllergy" (change)="setKosher()">
+      <label class="container">Vegan
+        <input type="checkbox">
       </label>
       </li>
 
       <li style="float:right">
       <label class="container">Vegetarian
-        <input type="checkbox" [checked]="veggieAllergy" (change)="setVeggie()">
+        <input type="checkbox">
       </label>
       </li>
 
       <li style="float:right">
       <label class="container">Gluten-free
-        <input type="checkbox" [checked]="glutenAllergy" (change)="setGluten()">
+        <input type="checkbox">
       </label>
       </li>
 
       <li style="float:right">
-    <label>Dietary restrictions: </label></li>
+    <label class="container">Choose your diet: </label></li>
 
   </ul>
 </nav>
