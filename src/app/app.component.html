@@ -66,10 +66,10 @@
                 <input #name type="text" id="iName" name="iName" placeholder="e.g. Tomatoes" value="" required>
               </div><br>
           
-              <br>
               <div>
                 Category
               <select #category name="category" type="dropdown" id="category">
+                <option value="">--Choose Category--</option>
                 <option
                   value='produce'>
                   Produce
@@ -88,6 +88,7 @@
                 </option>
                </select>
                </div>
+               <br>
               <div>
                 Date Purchased
                 <input #date type="date" id="purchased" name="purchased" value="2021-10-17"><br><br><br>
