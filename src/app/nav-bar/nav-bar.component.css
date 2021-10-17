@@ -67,8 +67,7 @@ ul {
   }
 
   .title {
-    font-family: 'Comfortaa', cursive;
-    
+    font-family: 'Comfortaa', cursive;   
   }
 
   .subtitle {
@@ -81,3 +80,9 @@ ul {
   .container {
     font-family: 'Didact Gothic', sans-serif;
   }
+
+  .border {
+    border-right: 1px solid black;
+  }
+
+
