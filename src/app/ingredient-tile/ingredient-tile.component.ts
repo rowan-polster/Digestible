@@ -11,7 +11,9 @@ export class IngredientTileComponent implements OnInit {
     @Input() ingredient: Ingredient;
     @Input() datePurchased: Date;
 
+    private safeColor: string = "#ffe4c4"
     private defaultColor: string = "#ffffff";
+    private warnColor: string = "#f3a033"
     private alertColor: string = "#FF6347";
 
     name: string;
@@ -75,6 +77,20 @@ export class IngredientTileComponent implements OnInit {
                 // "background-image" : `radial-gradient(${this.alertColor} 0%, ${this.defaultColor} 100%)`
                 "background-color" : `${this.defaultColor}`,
                 "box-shadow" : `inset 0 0 25px ${this.alertColor}`,
+                
+            });
+        } else if (this.daysToExpiration <= 3) {
+            Object.assign(this.myBackground, {
+                // "background-image" : `radial-gradient(${this.alertColor} 0%, ${this.defaultColor} 100%)`
+                "background-color" : `${this.defaultColor}`,
+                "box-shadow" : `inset 0 0 25px ${this.warnColor}`,
+                
+            });
+        } else {
+            Object.assign(this.myBackground, {
+                // "background-image" : `radial-gradient(${this.alertColor} 0%, ${this.defaultColor} 100%)`
+                "background-color" : `${this.defaultColor}`,
+                "box-shadow" : `inset 0 0 25px ${this.safeColor}`,
                 
             });
         }
