@@ -14,3 +14,12 @@
     display: flex;
     margin: 0 auto;
 }
+
+.form-container {
+    border-radius: 25px;
+    background: #b5cf91;
+    padding: 50px;
+    margin: 50px;
+    max-width: 218vh;
+    height: auto;
+  }

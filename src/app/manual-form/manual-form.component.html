@@ -7,17 +7,17 @@
     </style>
 
 
-<div class="form-container" [style.width]="width" [style.height]="height">
+<div [style.width]="width" [style.height]="height">
   <div>
     <p>Add Item to Pantry</p>
     <form action="/action_page.php">
-      <label for="iName" class="form-font">Ingredient  </label>
+      <label for="iName" class="form-font">Ingredient </label>
       <input type="text" id="iName" name="iName" placeholder="Tomatoes"><br>
   
-      <label for="category" class="form-font">Category  </label>
+      <label for="category" class="form-font">Category </label>
       <input type="text" id="category" name="category" placeholder="i.e Produce, Dairy, etc"><br>
   
-      <label for="purchased" class="form-font">Date purchased  </label>
+      <label for="purchased" class="form-font">Date purchased </label>
       <input type="date" id="purchased" name="purchased" value=""><br><br>
   
       <input class="submitButton" type="submit" value="Add to Pantry">

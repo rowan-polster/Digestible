@@ -1,5 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <br/>
+<div class = "container">
 <div class="columns" style="columns: 1">
     <div class="center-block">
         <image-carousel [width]="divWidth" [recipes]="recipes"></image-carousel>
@@ -7,9 +8,13 @@
 </div>
 <div class="columns">
     <div class="center-block">
-        <manual-form [height]="cardHeight" [width]="cardWidth"></manual-form>
-        <form-entry-card [height]="cardHeight" [width]="cardWidth"></form-entry-card>
+        
+        <!-- <form-entry-card [height]="cardHeight" [width]="cardWidth"> -->
+            <manual-form class="form-container"></manual-form>
+        <!-- </form-entry-card> -->
+        <form-entry-card class="form-container"></form-entry-card>
     </div>
+</div>
 </div>
 
 
