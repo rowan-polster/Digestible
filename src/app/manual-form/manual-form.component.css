@@ -20,12 +20,17 @@
     color: rgb(34, 39, 28)
   }
 
-  p {
-    font-family: 'Comfortaa', cursive;
+  h2 {
+    font-family: 'Comfortaa';
     color: whitesmoke;
-
+    text-align: center;
+    font-weight: bolder;
   }
-  
-  input {
-      width: 100px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 200;
   }

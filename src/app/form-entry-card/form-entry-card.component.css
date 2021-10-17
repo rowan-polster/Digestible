@@ -3,4 +3,17 @@
     background: #b5cf91;
     padding: 50px;
     margin: 50px;
+    overflow-y: scroll
   }
+
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+h2 {
+  font-family: 'Comfortaa';
+  color: whitesmoke;
+  text-align: center;
+  font-weight: bolder;
+}
