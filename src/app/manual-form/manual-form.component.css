@@ -20,7 +20,12 @@
     color: rgb(34, 39, 28)
   }
 
-  h2 {
+  p {
     font-family: 'Comfortaa', cursive;
     color: whitesmoke;
+
+  }
+  
+  input {
+      width: 100px;
   }
