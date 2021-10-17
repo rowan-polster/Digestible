@@ -11,7 +11,7 @@ export class IngredientTileComponent implements OnInit {
     @Input() ingredient: Ingredient;
     @Input() datePurchased: Date;
 
-    private defaultColor: string = "#D2B48C";
+    private defaultColor: string = "#ffffff";
     private alertColor: string = "#FF6347";
 
     name: string;
@@ -23,7 +23,7 @@ export class IngredientTileComponent implements OnInit {
     myBackground: object = {
         // "background-image" : `radial-gradient(${this.defaultColor} 0%, ${this.defaultColor} 100%)`
         "background-color" : `${this.defaultColor}`,
-        "box-shadow" : `inset 0 0 25px ${this.defaultColor}`
+        "box-shadow" : `inset 0 0 25px #ffe4c4`
     }
   
     constructor() {
