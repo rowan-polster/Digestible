@@ -17,9 +17,23 @@ export class RecipeModalComponent implements OnInit {
   }
 
   openModal(recipe: Recipe) {
+    let output: string = `This recipe would help you finish your `;
+    if (recipe.triggerIngredients.length === 1) {
+      output += `${recipe.triggerIngredients[0]}!`
+    } else {
+      for (let i=0; i<recipe.triggerIngredients.length; i++) {
+        if (i < recipe.triggerIngredients.length - 2) {
+          output += `${recipe.triggerIngredients[i]}, `
+        } else if (i < recipe.triggerIngredients.length - 1) {
+          output += `${recipe.triggerIngredients[i]}, and `
+        } else {
+          output += `${recipe.triggerIngredients[i]}!`
+        }
+      }
+    }
     Swal.fire({
       title: recipe.label,
-      // text: 'List of Ingredients',
+      text: output,
       imageUrl: recipe.image,
       // imageWidth: 400,
       // imageHeight: 200,

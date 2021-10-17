@@ -5,35 +5,35 @@
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[0]" alt="Random first slide" (click)="rm.openModal(recipes[0])">
+        <img [src]="recipes[0].image" [alt]="recipes[0].label" (click)="rm.openModal(recipes[0])">
       </div>        
     </div>
     <div class="carousel-caption">
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>{{ recipes[0].triggerIngredients[0] }}</h3>
+      <p> Use your {{ recipes[0].triggerIngredients[0] }} to make {{ recipes[0].label }}!</p>
     </div>
   </ng-template>
 
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[1]" alt="Random first slide" (click)="rm.openModal(recipes[1])">
+        <img [src]="recipes[1].image" [alt]="recipes[1].label" (click)="rm.openModal(recipes[1])">
       </div>        
     </div>
     <div class="carousel-caption">
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>{{ recipes[1].triggerIngredients[1] }}</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffd.</p>
     </div>
   </ng-template>
 
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
       <div class="box-tasvir" [style.width]="width">
-        <img [src]="images[2]" alt="Random first slide" (click)="rm.openModal(recipes[2])">
+        <img [src]="recipes[2].image" [alt]="recipes[2].label" (click)="rm.openModal(recipes[2])">
       </div>        
     </div>
     <div class="carousel-caption">
-      <h3>Third slide label</h3>
+      <h3>{{ recipes[2].triggerIngredients[2] }}</h3>
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </div>
   </ng-template>
