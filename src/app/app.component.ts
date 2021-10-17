@@ -1,3 +1,4 @@
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, HostListener, Input } from '@angular/core';
 import { Ingredient } from './structures/ingredient';
 import { Recipe } from './structures/Recipe';
@@ -215,12 +216,14 @@ export class AppComponent {
         this.veggieAllergy = !this.veggieAllergy
         // // this.sortIngredients();  
         // this.recommendRecipes();  
+        this.addIngredient("", "", "");
     }
 
     setGluten() : void {
         this.glutenAllergy = !this.glutenAllergy
         // // this.sortIngredients();  
         // this.recommendRecipes();  
+        this.addIngredient("", "", "");
     }
 
     private identifyIngredients(ingredients : string[]): string[] {
