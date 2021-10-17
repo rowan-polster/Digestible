@@ -8,8 +8,46 @@
 </div>
 <div class="columns">
     <div class="center-block">
-        <manual-form class="form-container"></manual-form>
-        <form-entry-card [width]="cardWidth" [ingredients]="ingredients"></form-entry-card>
+        <!-- <manual-form [height]="cardHeight" [width]="cardWidth"></manual-form> -->
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Didact+Gothic&display=swap');
+        </style>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+        </style>
+        
+        
+        <div class="form-container" [style.width]="cardWidth" [style.height]="cardHeight">
+          <div>
+            <h2>add an ingredient to your pantry</h2><br><br>
+            <!-- <form method="post"> -->
+            <div class="input-group">
+              <div class="right-div">
+                Ingredient
+                <input #name type="text" id="iName" name="iName" placeholder="e.g. Tomatoes" value="" required>
+              </div><br>
+          
+              <div>
+                Category
+                <input #category type="text" id="category" name="category" placeholder="e.g. Produce, Dairy, etc" value="" required>
+              </div><br>
+        
+              <div>
+                Date Purchased
+                <input #date type="date" id="purchased" name="purchased" value="2021-10-17"><br><br><br>
+              </div>
+          
+              <input (click)="addIngredient(name.value, category.value, date.value)" class="submitButton" type="submit" value="      Add Food      " style="margin: 0 auto; display: flex;">
+            <!-- </form> -->
+            </div>
+          </div>
+        </div>
+        
+        
+        <form-entry-card [height]="cardHeight" [width]="cardWidth" [ingredients]="ingredients"></form-entry-card>
     </div>
 </div>
 </div>

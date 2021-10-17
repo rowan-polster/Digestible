@@ -15,11 +15,42 @@
     margin: 0 auto;
 }
 
+
+
+
 .form-container {
     border-radius: 25px;
     background: #b5cf91;
     padding: 50px;
     margin: 50px;
-    max-width: 218vh;
-    height: auto;
+  }
+
+  .submitButton {
+      border-radius: 5px;
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+      background-blend-mode: multiply;
+      color: whitesmoke;
+      font-family: 'Comfortaa', cursive;
+      font-family: 'Didact Gothic', sans-serif;
+  }
+
+  .form-font {
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Didact Gothic', sans-serif;
+    color: rgb(34, 39, 28)
+  }
+
+  h2 {
+    font-family: 'Comfortaa';
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 200;
   }

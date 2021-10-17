@@ -1,3 +1,4 @@
 <div class="form-container" [style.width]="width" [style.height]="height">
+    <h2>peruse your<br>pantry</h2><br>
     <ingredient-tile *ngFor="let ingredient of ingredients" [ingredient]="ingredient.info" [datePurchased]="ingredient.date"></ingredient-tile>
 </div>

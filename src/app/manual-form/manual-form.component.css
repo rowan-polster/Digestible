@@ -27,9 +27,10 @@
     font-weight: bolder;
   }
 
-  input {
-      width: 175px;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 200;
   }
-
-  
-
