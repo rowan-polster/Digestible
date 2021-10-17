@@ -1,5 +1,3 @@
 <div class="form-container" [style.width]="width" [style.height]="height">
-    <div>
-        CONTENT
-    </div>
- </div>
+    <ingredient-tile *ngFor="let ingredient of ingredients" [ingredient]="ingredient.info" [datePurchased]="ingredient.date"></ingredient-tile>
+</div>

@@ -168,7 +168,7 @@ export class AppComponent {
 
 }
 
-interface DatedIngredient {
+export interface DatedIngredient {
     info: Ingredient,
     date: Date
 }
