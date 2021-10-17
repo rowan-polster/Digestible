@@ -10,7 +10,7 @@
   <nav>
     <ul>
       <li><a class="title" label="#home">Digestible</a></li>
-      <li><a class="subtitle" label="#inventory">reduce your waste, not your taste</a></li>
+      <li><a class="subtitle" label="#inventory">no waste, great taste</a></li>
 
       <li style="float:right">
       <label class="container">Vegan
@@ -68,9 +68,27 @@
           
               <div>
                 Category
-                <input #category type="text" id="category" name="category" placeholder="e.g. Produce, Dairy, etc" value="" required>
-              </div><br>
-        
+              <select #category name="category" type="dropdown" id="category">
+                <option value="">--Choose Category--</option>
+                <option
+                  value='produce'>
+                  Produce
+                </option>
+                  <option
+                  value='dairy'>
+                  Dairy
+                </option>
+                <option
+                  value='meat'>
+                  Meat
+                </option>
+                <option
+                  value='other'>
+                 Other
+                </option>
+               </select>
+               </div>
+               <br>
               <div>
                 Date Purchased
                 <input #date type="date" id="purchased" name="purchased" value="2021-10-17"><br><br><br>
