@@ -33,12 +33,10 @@ export class NgbdCarouselBasic {
 
   ngOnChanges() {
 
-    if (this.recipes) {
-      this.images = [];
-      this.recipes.forEach(recipe => {
-        this.images.push(recipe.image)
-      })
-    }
+    this.images = [];
+    this.recipes.forEach(recipe => {
+      this.images.push(this.recipes[0].image)
+    })
 
   }
   
