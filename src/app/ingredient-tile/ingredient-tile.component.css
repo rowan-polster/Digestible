@@ -19,7 +19,7 @@
   }
 
   .deleteButton {
-      text-align: left;
+      float: left;
       background: #000;
       color: #fff;
       border: none;
@@ -28,9 +28,47 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 10px;
 
   }
+
+  .deleteButton:hover + .deleteButton {
+      display: block;
+      color: red;
+  }
+
+  .close {
+    position: absolute;
+    float: left;
+    border: none;
+    padding: 0px 5px;
+    margin: 5px;
+    border-radius: 1px;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .close:hover {
+    opacity: 1;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background: gray;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+
 
   /* .center-text {
       display: flex;
