@@ -30,10 +30,6 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover, .dropdown:hover .dropbtn {
-    background-color: #cfe6b0;
-  }
-  
   li.dropdown {
     display: inline-block;
   }
@@ -68,4 +64,20 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+
+  .title {
+    font-family: 'Comfortaa', cursive;
+    
+  }
+
+  .subtitle {
+    font-family: 'Comfortaa', cursive;
+    font-size: 75%;
+    margin: 2px;
+    
+  }
+
+  .container {
+    font-family: 'Didact Gothic', sans-serif;
   }
