@@ -1,4 +1,32 @@
-<app-nav-bar></app-nav-bar>
+<!-- <app-nav-bar></app-nav-bar> -->
+<nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#inventory">Inventory</a></li>
+
+      <li style="float:right">
+      <label class="container">Kosher
+        <input type="checkbox" [checked]="kosherAllergy" (change)="setKosher()">
+      </label>
+      </li>
+
+      <li style="float:right">
+      <label class="container">Vegetarian
+        <input type="checkbox" [checked]="veggieAllergy" (change)="setVeggie()">
+      </label>
+      </li>
+
+      <li style="float:right">
+      <label class="container">Gluten-free
+        <input type="checkbox" [checked]="glutenAllergy" (change)="setGluten()">
+      </label>
+      </li>
+
+      <li style="float:right">
+    <label>Dietary restrictions: </label></li>
+
+  </ul>
+</nav>
 <br/><br>
 <div class = "container">
 <div class="columns" style="columns: 1">

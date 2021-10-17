@@ -35,7 +35,7 @@ export class NgbdCarouselBasic {
 
     this.images = [];
     this.recipes.forEach(recipe => {
-      this.images.push(this.recipes[0].image)
+      this.images.push(recipe.image)
     })
 
   }
