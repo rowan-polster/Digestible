@@ -24,7 +24,7 @@ export class RecipeModalComponent implements OnInit {
       // imageWidth: 400,
       // imageHeight: 200,
       // imageAlt: 'Custom image',
-      confirmButtonColor: '#000000'
+      confirmButtonColor: 'rgb(89, 107, 66)'
     })
   }
 
