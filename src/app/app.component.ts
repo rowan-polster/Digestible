@@ -23,7 +23,8 @@ export class AppComponent {
         this.ingredients = [
             {info: new Ingredient("Milk", "Dairy"), date: new Date("10/11/2021")},
             {info: new Ingredient("Soda", "Other"), date: new Date()},
-            {info: new Ingredient("Pizza", "Other"), date: new Date("10/05/2021")}
+            {info: new Ingredient("Eggs", "Other"), date: new Date("10/05/2021")},
+            {info: new Ingredient("Cheese", "Other"), date: new Date("10/01/2021")}
         ];
         this.alertIngredients = [];
         this.cardWidth = "";
@@ -142,44 +143,80 @@ export class AppComponent {
 
     private recommendRecipes(): void {
         
-        const numOfResults : number = 4;
+        const numOfResults : number = 3;
+        const extraCalls : number = this.alertIngredients.length < 3 ? 3 - this.alertIngredients.length : 0;
         const from : number = Math.round(Math.random() * 10);
         const to : number = from + numOfResults;
         const appId : string = "c8728e98";
         const appKey : string = "5c86e9ec900ac93823bc0a8c336fe773"
-        const apiUrl : string = `https://api.edamam.com/search?q=chicken&app_id=${appId}&app_key=${appKey}&from=${from}&to=${to}`;
         const fetchConfig: object = {
             method: 'GET',
             mode: 'cors'
         };
-        fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
+        this.recipes = [];
+        this.sortIngredients();
 
-            for (const recipePayload of json.hits) {
+            let qString : string = "";
+            this.alertIngredients.forEach(ingredient=> {
+                qString += `${ingredient.name.toLowerCase()}+`;
+            });
+            let apiUrl : string = `https://api.edamam.com/search?q=${qString.slice(0, -1)}&app_id=${appId}&app_key=${appKey}&from=${from}&to=${to}`;
+                
+            fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
 
-                const ingredients = [];
-                for (const ingredient of recipePayload.recipe.ingredients) {
-                    ingredients.push(ingredient.food);
+                for (const recipePayload of json.hits) {
+                            
+                    const ingredients : string[] = [];
+                    for (const ingredient of recipePayload.recipe.ingredients) {
+                        ingredients.push(ingredient.food);
+                    }
+
+                    this.recipes.push(
+                        new Recipe({
+                            label: recipePayload.recipe.label,
+                            image : recipePayload.recipe.image,
+                            link : recipePayload.recipe.url,
+                            ingredients: ingredients,
+                            triggerIngredients: this.identifyIngredients(ingredients)
+                        })
+                    );
+                    
                 }
+    
+            })).then(() => {
+                this.setCardWidth();
+                this.setCardHeight();
+                this.setDivWidth();
+                this.sortIngredients();             
+            });                  
 
-                this.recipes.push(
-                    new Recipe({
-                        label: recipePayload.recipe.label,
-                        image : recipePayload.recipe.image,
-                        link : recipePayload.recipe.url,
-                        ingredients: ingredients,
-                        triggerIngredients: ["Test Payload"]
-                    })
-                );
+    }
+
+    private identifyIngredients(ingredients : string[]): string[] {
+
+        const found: string[] = [];
+        for (const ingredient of ingredients) {
+            for (const alertIngredient of this.alertIngredients) {
+
+                let compareA = ingredient.toLowerCase();
+                let compareB = alertIngredient.name.toLowerCase()
+                let tryAdd = false;
+
+                if (compareA === compareB) {tryAdd=true}
+                else if (compareA.includes(compareB)) {tryAdd=true}
+                else if (compareB.includes(compareA)) {tryAdd=true}
+
+                if (tryAdd) {
+                    if (!found.includes(alertIngredient.name)) {
+                        found.push(alertIngredient.name)
+                    }
+                }
                 
             }
+        }
 
-        })).then(() => {
-            this.setCardWidth();
-            this.setCardHeight();
-            this.setDivWidth();
-            this.sortIngredients();
-        });
-
+        return found;
+        
     }
 
     addIngredient(name: string, category: string, date: string) : void {
@@ -195,6 +232,7 @@ export class AppComponent {
         }
 
         this.sortIngredients();
+        this.recommendRecipes();
         
     }
 
