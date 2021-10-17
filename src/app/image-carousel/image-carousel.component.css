@@ -24,6 +24,10 @@
     transition-duration: 2000ms;
   }
 
+  ::ng-deep .carousel-inner .sr-only {
+    display: none;
+ }
+
 div {
     border-radius: 50px;
 }
