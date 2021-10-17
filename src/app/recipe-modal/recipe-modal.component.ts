@@ -25,7 +25,7 @@ export class RecipeModalComponent implements OnInit {
         if (i < recipe.triggerIngredients.length - 2) {
           output += `${recipe.triggerIngredients[i]}, `
         } else if (i < recipe.triggerIngredients.length - 1) {
-          output += `${recipe.triggerIngredients[i]}, and `
+          output += `${recipe.triggerIngredients[i]} and `
         } else {
           output += `${recipe.triggerIngredients[i]}!`
         }

@@ -5,20 +5,20 @@
       <li><a href="#inventory">Inventory</a></li>
 
       <li style="float:right">
-      <label class="container">Vegan
-        <input type="checkbox">
+      <label class="container">Kosher
+        <input type="checkbox" [checked]="kosherAllergy" (change)="setKosher()">
       </label>
       </li>
 
       <li style="float:right">
       <label class="container">Vegetarian
-        <input type="checkbox">
+        <input type="checkbox" [checked]="veggieAllergy" (change)="setVeggie()">
       </label>
       </li>
 
       <li style="float:right">
       <label class="container">Gluten-free
-        <input type="checkbox">
+        <input type="checkbox" [checked]="glutenAllergy" (change)="setGluten()">
       </label>
       </li>
 

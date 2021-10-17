@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Ingredient } from './structures/ingredient';
 import { Recipe } from './structures/Recipe';
 
@@ -12,6 +12,10 @@ export class AppComponent {
     recipes : Recipe[];
     ingredients: DatedIngredient[];
     alertIngredients: Ingredient[];
+
+    glutenAllergy: boolean = false;
+    veggieAllergy: boolean = false;
+    kosherAllergy: boolean = false;
     
 
     cardWidth: string;
@@ -24,7 +28,7 @@ export class AppComponent {
             {info: new Ingredient("Milk", "Dairy"), date: new Date("10/11/2021")},
             {info: new Ingredient("Soda", "Other"), date: new Date()},
             {info: new Ingredient("Eggs", "Other"), date: new Date("10/05/2021")},
-            {info: new Ingredient("Cheese", "Other"), date: new Date("10/01/2021")}
+            // {info: new Ingredient("Cheese", "Other"), date: new Date("10/01/2021")}
         ];
         this.alertIngredients = [];
         this.cardWidth = "";
@@ -160,7 +164,15 @@ export class AppComponent {
             this.alertIngredients.forEach(ingredient=> {
                 qString += `${ingredient.name.toLowerCase()}+`;
             });
-            let apiUrl : string = `https://api.edamam.com/search?q=${qString.slice(0, -1)}&app_id=${appId}&app_key=${appKey}&from=${from}&to=${to}`;
+            let healthString : string = "";
+            if (this.glutenAllergy || this.veggieAllergy || this.kosherAllergy) {
+                healthString = "&health=";
+                if (this.glutenAllergy) {healthString += "Gluten-Free+"}
+                if (this.veggieAllergy) {healthString += "Vegetarian+"}
+                if (this.kosherAllergy) {healthString += "Kosher+"}
+                healthString = healthString.slice(0, -1);
+            }
+            let apiUrl : string = `https://api.edamam.com/search?q=${qString}&app_id=${appId}&app_key=${appKey}&from=${from}&to=${to}${healthString}`;
                 
             fetch(apiUrl, fetchConfig).then(response => response.json().then(json => {
 
@@ -190,6 +202,25 @@ export class AppComponent {
                 this.sortIngredients();             
             });                  
 
+    }
+
+    setKosher() : void {
+        this.kosherAllergy = !this.kosherAllergy
+        // // this.sortIngredients();  
+        // this.recommendRecipes();
+        this.addIngredient("", "", "");
+    }
+
+    setVeggie() : void {
+        this.veggieAllergy = !this.veggieAllergy
+        // // this.sortIngredients();  
+        // this.recommendRecipes();  
+    }
+
+    setGluten() : void {
+        this.glutenAllergy = !this.glutenAllergy
+        // // this.sortIngredients();  
+        // this.recommendRecipes();  
     }
 
     private identifyIngredients(ingredients : string[]): string[] {
