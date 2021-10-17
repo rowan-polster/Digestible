@@ -63,7 +63,7 @@
             <div class="input-group">
               <div class="right-div">
                 Ingredient
-                <input #name type="text" id="iName" name="iName" placeholder="e.g. Tomatoes" value="" required>
+                <input #name type="text" id="iName" name="iName" placeholder="e.g. Tomatoes" value="" class="category-text" required>
               </div><br>
           
               <div>
@@ -91,7 +91,7 @@
                <br>
               <div>
                 Date Purchased
-                <input #date type="date" id="purchased" name="purchased" value="2021-10-17"><br><br><br>
+                <input #date type="date" id="purchased" name="purchased" value="2021-10-17" class="category-date"><br><br><br>
               </div>
           
               <input (click)="addIngredient(name.value, category.value, date.value)" class="submitButton" type="submit" value="      Add Food      " style="margin: 0 auto; display: flex;">
